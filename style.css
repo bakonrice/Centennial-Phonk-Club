@@ -1,7 +1,8 @@
 * {
     margin: 0;
-    padding: 0'
-
+    padding: 0;
+    box-sizing:border-box;
+    font-family:'Courier New', Courier, monospace
 }
 
 header {
@@ -9,7 +10,75 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    width:max-content;
+    width:100%;
     padding: 20px 100px;
     background: purple;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index: 99;
+}
+
+.navigation a {
+    position:relative;
+    font-size: 1.4em;
+    margin-left: 50px;
+    font-weight:700;
+}
+
+body {
+    min-height: 100dvh;
+    display:flex;
+    flex-direction:column;
+}
+
+main {
+    flex-grow: 1;
+    padding-top: 100px;
+}
+
+
+footer {
+
+    background: black;
+    color: white;
+    padding: 20px 100px;
+    text-align: center;
+    width: 100%;
+    display:flex;
+    justify-content: center;
+
+}
+
+ul {
+    list-style:none;
+}
+
+
+.logo {
+    font-size: 2em;
+    color:coral;
+    user-select:none
+}
+
+a {
+    font-size:16px;
+    text-decoration:none;
+    transition: 0.6s;
+}
+
+
+a:hover {
+    font-size: 24px;
+    color:cornflowerblue;
+    
+}
+
+a:active {
+
+    color: cyan
+}
+
+a:visited {
+    color:crimson
 }
