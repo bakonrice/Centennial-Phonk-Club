@@ -1,0 +1,15 @@
+HTML
+│
+├── head
+│
+└── body
+    ├── header
+    │   └── navigation
+    │
+    ├── main
+    │   ├── home
+    │   ├── about
+    │   ├── events
+    │   └── gallery
+    │
+    └── footer
