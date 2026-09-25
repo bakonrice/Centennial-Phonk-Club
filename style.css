@@ -11,7 +11,7 @@ header {
     top: 0;
     left: 0;
     width:100%;
-    padding: 20px 100px;
+    padding: 5px 100px;
     background: purple;
     display:flex;
     justify-content:space-between;
@@ -27,14 +27,16 @@ header {
 }
 
 body {
+    overflow:hidden;
     min-height: 100dvh;
     display:flex;
     flex-direction:column;
 }
 
 main {
+    position:relative;
     flex-grow: 1;
-    padding-top: 100px;
+    padding-top: 70px;
 }
 
 
@@ -58,12 +60,15 @@ footer {
 
 ul {
     list-style:none;
+    padding:0;
 }
 
 
 .logo {
-    font-size: 2em;
-    color:coral;
+    width: 60px;
+    height: 60px;
+    object-fit:cover;
+    border-radius: 50%;
     user-select:none
 }
 
@@ -100,29 +105,60 @@ a:visited {
     gap: 30px;
     overflow:hidden;
     position:relative;
+    z-index:0;
 }
 
+.darkoverlay {
+    position:absolute;
+    inset: 0;
+    background-color: black;
+    opacity:0; 
+    animation: DIMMER 4s ease-out forwards;
+    z-index:1;
+    
+}
 .pic {
     flex:1;
     width: 250px;
     border-radius: 12px;
+    z-index:0;
 }
 
 
 .left {
     opacity:0;
-    animation: riseUp 1s ease-out forwards;
+    animation: riseUp 1.5s ease-out 0s forwards;
 }
 
 .right {
     opacity:0;
-    animation: riseUp 1s ease-out 1s forwards;
+    animation: riseUp 1.5s ease-out 1s forwards;
 }
 
 .center {
     opacity:0;
-    animation: slideDown 1s ease-out 0.5s forwards;
+    animation: slideDown 1.5s ease-out 0.5s forwards;
 }
+
+.welcome {
+    color:white;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    font-size:4em;
+    transform: translate(-50%, -100vh);
+    opacity: 0;
+    animation: textDrop 1s ease-out 4.75s forwards; 
+}
+
+
+ul li::before {
+    content: "📸";
+    margin-right:8px;
+    font-size: 1.2em
+}
+
 
 @keyframes riseUp {
     from {
@@ -143,5 +179,26 @@ a:visited {
     to {
         transform: translateY(0);
         opacity: 1;
+    }
+}
+
+@keyframes DIMMER {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.6;
+    }
+}
+
+
+@keyframes textDrop {
+    from {
+        transform: translate(-50%, -100vh);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, -50%);
+        opacity: 0.6;
     }
 }
