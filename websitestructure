@@ -9,7 +9,7 @@ HTML
     ├── main
     │   ├── home
     │   ├── about
-    │   ├── events
+    │   ├── memebrs
     │   └── gallery
     │
     └── footer
@@ -19,3 +19,9 @@ HTML
 
 
 Next add button to footer that will head the user towards insta page
+
+Work on gallery and event section , no events, now its members and gallery
+
+add member potrait and name under in gallery, also add the list of members as url to maybe imgur.
+
+Then work on gallery and add pics
